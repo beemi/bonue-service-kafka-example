@@ -1,4 +1,4 @@
-package com.jaitechltd.bonus.model;
+package com.jaitechltd.bonus.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name = "bonus")
+@Table(name = "bonus", schema = "dbo")
 public class Bonus {
 
     @Id
@@ -24,6 +24,10 @@ public class Bonus {
     @Column(name = "BONUS_TYPE")
     @JsonProperty(value = "bonusType")
     private String bonusType;
+
+    @Column(name = "BONUS_STATUS")
+    @JsonProperty(value = "bonusStatus")
+    private String bonusStatus;
 
     @Column(name = "BONUS_CODE")
     @JsonProperty(value = "bonusCode")

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -12,8 +14,11 @@ import lombok.NoArgsConstructor;
 public class BonusEvent {
     private String bonusType;
     private String bonusCode;
+    private String bonusStatus;
     private String bonusAmount;
     private String bonusCurrency;
+    private LocalDateTime createdAt;
+    private LocalDateTime lastModifiedTime;
     private ExtraDetails extraDetails;
 
     @Data

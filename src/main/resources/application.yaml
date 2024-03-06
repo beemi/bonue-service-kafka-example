@@ -1,3 +1,13 @@
+logging:
+  level:
+    '[org.springframework.kafka]': INFO
+    '[org.springframework.kafka.core]': INFO
+    '[org.springframework.kafka.listener]': INFO
+    '[com.jaitechltd.bonus]': INFO
+    org.springframework.boot.web: INFO
+    org.springframework.security: INFO
+    org.springframework: INFO
+
 spring:
   application:
     name: "bonus-service"
@@ -18,23 +28,20 @@ spring:
         properties:
             spring.json.use.type.headers: false
             spring.json.trusted.packages: "*"
-
-logging:
-  level:
-    root: INFO
-    org.springframework: DEBUG
-    com.jaitechltd.bonus: DEBUG
+  datasource:
+    url: jdbc:mysql://localhost:3306/bonus_db
+    username: test
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 ---
 # dev profile
 spring:
   profiles:
     active: dev
-
-logging:
-    level:
-        root: INFO
-        org.springframework: DEBUG
-        com.jaitechltd.bonus: DEBUG
 
 
