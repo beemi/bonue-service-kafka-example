@@ -1,5 +1,6 @@
 package com.jaitechltd.bonus.messaging;
 
+import com.jaitechltd.bonus.config.KafkaTopicConfig;
 import com.jaitechltd.bonus.model.BonusEvent;
 import com.jaitechltd.bonus.service.BonusService;
 import lombok.RequiredArgsConstructor;
@@ -12,11 +13,15 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class BonusEventProcessor {
 
-     private final BonusService bonusService;
+    private final BonusService bonusService;
 
-     @KafkaListener(topics = "bonus", groupId = "bonus-consumer-group")
-     public void processBonusEvent(BonusEvent bonusEvent) {
-         log.info("Received bonus event: {}", bonusEvent);
-         bonusService.processBonusEvent(bonusEvent);
-     }
+    @KafkaListener(topics = KafkaTopicConfig.BONUS_TOPIC, groupId = KafkaTopicConfig.BONUS_GROUP_ID,
+            errorHandler = "customErrorHandler",
+            properties = {
+                    "spring.json.value.default.type:com.jaitechltd.bonus.model.BonusEvent"
+            })
+    public void processBonusEvent(BonusEvent bonusEvent) {
+        log.info("Received bonus event: {}", bonusEvent);
+        bonusService.processBonusEvent(bonusEvent);
+    }
 }

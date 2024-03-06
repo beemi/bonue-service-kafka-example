@@ -9,12 +9,8 @@ import org.springframework.kafka.listener.KafkaListenerErrorHandler;
 @Configuration
 public class KafkaTopicConfig {
 
-    private static final String TOPIC_NAME = "bonus";
-
-    @Bean
-    public String getTopicName() {
-        return TOPIC_NAME;
-    }
+    public static final String BONUS_TOPIC = "bonus";
+    public static final String BONUS_GROUP_ID = "bonus-consumer-group";
 
     @Bean("customErrorHandler")
     public static KafkaListenerErrorHandler listenerErrorHandler() {
