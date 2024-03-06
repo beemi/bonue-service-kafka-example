@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: "bonus-service"
+
+server:
+    port: 8081
+---
+# local profile
+spring:
+  profiles:
+    active: local
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    com.jaitechltd.bonus: DEBUG
+
+---
+# dev profile
+spring:
+  profiles:
+    active: dev
+
+logging:
+    level:
+        root: INFO
+        org.springframework: DEBUG
+        com.jaitechltd.bonus: DEBUG
+
+
