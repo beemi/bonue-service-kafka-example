@@ -29,3 +29,9 @@ docker-compose -f docker-compose.kafka.yml up -d
 ```
 
 Kafka can be accessed at `localhost:9092`, also available via the Kafka UI at http://localhost:8080/.
+
+### 📖 Swagger API Documentation
+
+🔍 Access the OpenAPI documentation to explore and test the API endpoints:
+
+- Swagger UI: [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
