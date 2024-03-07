@@ -23,7 +23,7 @@ It is necessary to have Docker and Docker Compose installed on your machine.
 docker-compose up -d
 ```
 
-The application will be available at [http://localhost:8081](http://localhost:8081).
+The application will be available at [http://localhost:8090](http://localhost:8090).
 
 ### 📦 Kafka Producer
 
@@ -63,4 +63,4 @@ Kafka can be accessed at `localhost:9092`, also available via the Kafka UI at ht
 
 🔍 Access the OpenAPI documentation to explore and test the API endpoints:
 
-- Swagger UI: [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
+- Swagger UI: [http://localhost:8090/swagger-ui/index.html](http://localhost:8090/swagger-ui/index.html)
