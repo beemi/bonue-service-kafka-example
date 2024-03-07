@@ -36,6 +36,16 @@ management:
     db:
       enabled: true
       show-details: always
+ftp:
+  host: ftp.example.com
+  username: ftpuser
+  password: ftppassword
+  port: 21
+  remote-dir: /home/ftpuser
+  local-dir: /home/ftpuser
+  file-name: test.txt
+  file-path: /home/ftpuser/test.txt
+  file-content: "Hello, World!"
 ---
 # local profile
 spring:
