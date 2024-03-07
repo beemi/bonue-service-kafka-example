@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
-@ControllerAdvice
 @Slf4j
+@ControllerAdvice
 public class ControllerErrorAdvice {
 
     @ResponseStatus(BAD_REQUEST)

@@ -25,7 +25,7 @@ public class BonusController {
 
     @GetMapping("/get/{id}")
     @Operation(summary = "Get a bonus by id",
-            description = "Get a bonus by id", tags = {"bonus"},
+            description = "Get a bonus by id",
             operationId = "getBonus", responses = {@ApiResponse(responseCode = "200", description = "Bonus found")})
     public ResponseEntity<Object> getBonusById(final @PathVariable Long id) {
         log.info("Call to get bonus by id - {}", id);
@@ -33,7 +33,7 @@ public class BonusController {
     }
 
     @Operation(summary = "Get all bonuses",
-            description = "Get all bonuses", tags = {"bonus"},
+            description = "Get all bonuses",
             operationId = "getAllBonus", responses = {@ApiResponse(responseCode = "200", description = "Bonuses found")})
     @GetMapping("/getAll")
     public ResponseEntity<Object> getAllBonus() {
