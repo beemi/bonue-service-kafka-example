@@ -34,4 +34,8 @@ public class BonusService {
     public List<Bonus> getAllBonus() {
         return bonusRepository.findAll();
     }
+
+    public Object getBonusById(Long id) {
+        return bonusRepository.findById(id);
+    }
 }

@@ -20,6 +20,15 @@ public class BonusController {
         this.bonusService = bonusService;
     }
 
+    @GetMapping("/get/{id}")
+    @Operation(summary = "Get a bonus by id",
+            description = "Get a bonus by id", tags = {"bonus"},
+            operationId = "getBonus", responses = {@ApiResponse(responseCode = "200", description = "Bonus found")})
+    public ResponseEntity<Object> getBonusById(Long id) {
+        log.info("Call to get bonus by id - {}", id);
+        return ResponseEntity.ok().body(bonusService.getBonusById(id));
+    }
+
     @Operation(summary = "Get all bonuses",
             description = "Get all bonuses", tags = {"bonus"},
             operationId = "getAllBonus", responses = {@ApiResponse(responseCode = "200", description = "Bonuses found")})

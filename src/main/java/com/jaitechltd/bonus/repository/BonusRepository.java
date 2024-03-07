@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface BonusRepository extends JpaRepository<Bonus, Long> {
 
+    Optional<Bonus> findById(Long bonusId);
+
     @Query("SELECT b FROM Bonus b WHERE b.bonusCode = ?1")
     Optional<Bonus> getBonusByBonusCode(final String bonusCode);
 
