@@ -1,3 +1,32 @@
+## 🚀 Kafka Consumer Spring Boot Application
+
+This is a simple Spring Boot application that consumes messages from a Kafka topic and saves them to a MySQL database.
+
+### 🛠️ Technologies
+
+- Java 17
+- Spring Boot
+- Kafka
+- MySQL
+- Docker
+- Docker Compose
+- Lombok
+- MapStruct
+- Swagger
+- JUnit 5
+
+### 🚀 Run the application
+
+It is necessary to have Docker and Docker Compose installed on your machine.
+
+```bash
+docker-compose up -d
+```
+
+The application will be available at [http://localhost:8081](http://localhost:8081).
+
+### 📦 Kafka Producer
+
 ## Bonus message
 
 ```json
